@@ -8,7 +8,7 @@ access: '{{ access }}'
 vars:
   region: '{{ region }}'
 resources:
-  fc-zip-oss-service:
+  fc-unzip-oss-service:
     component: fc3
     props:
       region: ${vars.region}
@@ -36,6 +36,7 @@ resources:
       environmentVariables:
         PROCESSED_DIR: '{{ processedDir }}'
         RETAIN_FILE_NAME: '{{ retainFileName }}'
+        WORK_DIR: "/tmp"
       internetAccess: true
       role: '{{ roleArn }}'
       functionName: '{{ functionName }}'
